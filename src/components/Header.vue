@@ -1,0 +1,65 @@
+<template>
+  <section id="header">
+    <div id="header-title">
+      <h1>
+        <a href="/">{{title}}</a>
+      </h1>
+    </div>
+    <div id="header-search">
+      <input type="text" name="keyword" autocomplete="off" placeholder="">
+      <input type="button" name="doSearch" value="搜索">
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: 'Header',
+  data () {
+    return {
+      title: '----'
+    }
+  }
+}
+</script>
+
+<style scoped>
+  #header {
+    background: antiquewhite;
+    height: 80px;
+    margin-bottom: 24px;
+  }
+  h1 {
+    margin: 0;
+  }
+  #header-title {
+    width: 160px;
+    line-height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #header-search{
+    margin-left: 160px;
+    margin-right: 300px;
+    padding: 20px 0;
+    max-width: 670px;
+    position: relative;
+  }
+  #header-search input[name=keyword]{
+    width: 100%;
+    padding: 5px 60px 5px 12px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  }
+
+  #header-search input[name=doSearch] {
+    padding: 3px 8px;
+    letter-spacing: 3px;
+    background: transparent;
+    position: absolute;
+    top: 22px;
+    right: 8px;
+    color: #2bc;
+  }
+
+</style>
