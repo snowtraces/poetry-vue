@@ -6,8 +6,8 @@
       </h1>
     </div>
     <div id="header-search">
-      <input type="text" name="keyword" autocomplete="off" placeholder="">
-      <input type="button" name="doSearch" value="搜索">
+      <input type="text" v-model="keyword" @keyup.enter="search" name="keyword" autocomplete="off" placeholder="">
+      <input type="button" name="doSearch" value="搜索" @click="search">
     </div>
   </section>
 </template>
@@ -17,7 +17,19 @@ export default {
   name: 'Header',
   data () {
     return {
-      title: '----'
+      title: '----',
+      keyword: ''
+    }
+  },
+  methods: {
+    search: function (e) {
+      let keyword = this.keyword
+      if (!keyword) {
+        return
+      }
+      this.$router.push({
+        path: `/search/${keyword}`
+      })
     }
   }
 }

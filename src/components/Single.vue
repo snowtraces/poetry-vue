@@ -3,8 +3,8 @@
     <Header></Header>
     <section id="content">
       <section class="content-left"></section>
-      <ContentMiddle :poetry="poetry" :author="author"></ContentMiddle>
-      <ContentRight :poetry="poetry" ></ContentRight>
+      <ContentMiddleSingle :bean="bean"></ContentMiddleSingle>
+      <!--<ContentRight :poetry="poetry" ></ContentRight>-->
     </section>
     <section id="footer"></section>
   </div>
@@ -13,26 +13,22 @@
 <script>
 import axios from 'axios'
 import Header from './Header'
-import ContentMiddle from './ContentMiddle'
-import ContentRight from './ContentRight'
+import ContentMiddleSingle from './ContentMiddleSingle'
 export default {
-  name: 'Layouts',
-  components: {ContentRight, ContentMiddle, Header},
+  name: 'Single',
+  components: {ContentMiddleSingle, Header},
   data () {
     return {
-      poetry: {},
-      author: {},
-      shangxi: {},
+      bean: [],
       errors: []
     }
   },
   created () {
-    axios.get(`https://shicigefu.net/api/poetry/1391?language=1`)
+    let id = this.$route.params.id
+    axios.get(`https://shicigefu.net/api/poetry/${id}?language=1`)
       .then(response => {
         let data = response.data
-        this.poetry = data.poetry
-        this.author = data.author
-        this.shangxi = data.shangxi
+        this.bean = data.poetry
       })
       .catch(e => {
         this.errors.push(e)
@@ -40,7 +36,8 @@ export default {
   }
 }
 </script>
-<style lang="css" scoped>
+
+<style scoped>
   #wrap {
     height: 100%;
   }
@@ -56,7 +53,6 @@ export default {
     position: absolute;
     width: 160px;
     height: 100%;
-    /*background: #888;*/
     top: 0;
     left: 0;
   }
@@ -66,5 +62,4 @@ export default {
     height: 80px;
     margin-top: 24px;
   }
-
 </style>

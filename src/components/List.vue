@@ -3,8 +3,8 @@
     <Header></Header>
     <section id="content">
       <section class="content-left"></section>
-      <ContentMiddle :poetry="poetry" :author="author"></ContentMiddle>
-      <ContentRight :poetry="poetry" ></ContentRight>
+      <ContentMiddleList :beanList="beanList"></ContentMiddleList>
+      <!--<ContentRight :poetry="poetry" ></ContentRight>-->
     </section>
     <section id="footer"></section>
   </div>
@@ -13,26 +13,22 @@
 <script>
 import axios from 'axios'
 import Header from './Header'
-import ContentMiddle from './ContentMiddle'
-import ContentRight from './ContentRight'
+import ContentMiddleList from './ContentMiddleList'
 export default {
   name: 'Layouts',
-  components: {ContentRight, ContentMiddle, Header},
+  components: {ContentMiddleList, Header},
   data () {
     return {
-      poetry: {},
-      author: {},
-      shangxi: {},
+      beanList: [],
       errors: []
     }
   },
   created () {
-    axios.get(`https://shicigefu.net/api/poetry/1391?language=1`)
+    let keyword = this.$route.params.keyword
+    axios.get(`https://shicigefu.net/api/poetry/search?keyword=${keyword}`)
       .then(response => {
         let data = response.data
-        this.poetry = data.poetry
-        this.author = data.author
-        this.shangxi = data.shangxi
+        this.beanList = data.poetryBeanList
       })
       .catch(e => {
         this.errors.push(e)
@@ -56,7 +52,6 @@ export default {
     position: absolute;
     width: 160px;
     height: 100%;
-    /*background: #888;*/
     top: 0;
     left: 0;
   }

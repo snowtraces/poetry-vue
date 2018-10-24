@@ -1,10 +1,10 @@
 <template>
   <section class="content-middle">
-    <div class="potery-title">
+    <div class="poetry-title">
       {{poetry.title}}
     </div>
-    <div class="potery-author">{{poetry.author}}</div>
-    <div class="potery-content">
+    <div class="poetry-author">{{poetry.author}}</div>
+    <div class="poetry-content">
       <p v-for="(item, index) in poetry.contentList" :key="index"> {{item}} </p>
     </div>
     <div class="author">
@@ -16,34 +16,14 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   name: 'ContentMiddle',
-  data () {
-    return {
-      poetry: {},
-      author: {},
-      shangxi: {},
-      errors: []
-    }
-  },
+  props: ['poetry', 'author'],
   computed: {
     dynasty: function () {
       let dynasty = this.author.dynasty
       return dynasty === 'tang' ? '唐' : dynasty === 'song' ? '宋' : ''
     }
-  },
-  created () {
-    axios.get(`https://shicigefu.net/api/poetry/1391?language=1`)
-      .then(response => {
-        let data = response.data
-        this.poetry = data.poetry
-        this.author = data.author
-        this.shangxi = data.shangxi
-      })
-      .catch(e => {
-        this.errors.push(e)
-      })
   }
 }
 </script>
@@ -57,6 +37,26 @@ export default {
     overflow: auto;
     max-width: 670px;
     border: 1px solid #ccc;
+  }
+  .author > div {
+    display: inline;
+  }
+  body .author{
+    line-height: 1.375;
+  }
+  .author-name{
+    font-size: 1.125em;
+  }
+  .author-dynasty{
+    display: inline-block;
+    font-size: 0.75em;
+    background: #999;
+    color: #fff;
+    padding: 2px 3px;
+    border-radius: 50%;
+  }
+  .author-detail{
+    font-size: 0.875em;
   }
 
 </style>
