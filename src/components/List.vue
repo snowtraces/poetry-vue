@@ -1,9 +1,10 @@
 <template>
   <div id="wrap">
-    <Header></Header>
+    <Header :inputKeyword="keyword"></Header>
+    <div class="search-result-desc" v-html="resultDesc"></div>
     <section id="content">
       <section class="content-left"></section>
-      <ContentMiddleList :beanList="beanList"></ContentMiddleList>
+      <ContentMiddleList :beanList="beanList" :keyword="keyword" :page="page" :tagList="tagList"></ContentMiddleList>
       <!--<ContentRight :poetry="poetry" ></ContentRight>-->
     </section>
     <section id="footer"></section>
@@ -19,7 +20,11 @@ export default {
   components: {ContentMiddleList, Header},
   data () {
     return {
+      keyword: '',
+      page: '',
+      tagList: [],
       beanList: [],
+      resultDesc: '',
       errors: []
     }
   },
@@ -29,6 +34,10 @@ export default {
       .then(response => {
         let data = response.data
         this.beanList = data.poetryBeanList
+        this.keyword = data.keyword
+        this.page = data.page
+        this.tagList = data.relationTag
+        this.resultDesc = `获得约 ${data.total || 0} 条结果（第${data.page || 1}页）`
       })
       .catch(e => {
         this.errors.push(e)
@@ -54,6 +63,11 @@ export default {
     height: 100%;
     top: 0;
     left: 0;
+  }
+  .search-result-desc{
+    font-size: 0.75em;
+    color: #999;
+    margin: -12px 0 12px 160px;
   }
 
   #footer {

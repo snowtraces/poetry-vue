@@ -15,10 +15,11 @@
 <script>
 export default {
   name: 'Header',
+  props: ['inputKeyword'],
   data () {
     return {
       title: '----',
-      keyword: ''
+      keyword: this.$route.params.keyword
     }
   },
   methods: {

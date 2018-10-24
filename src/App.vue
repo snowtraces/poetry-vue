@@ -52,6 +52,9 @@ export default {
   div.clearfix {
     clear: both;
   }
+  em {
+    color: red;
+  }
 
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
