@@ -55,6 +55,24 @@ export default {
   em {
     color: red;
   }
+  .page-nav .nav-item a{
+    display: inline-block;
+    border: 1px solid #ddd;
+    min-width: 32px;
+    line-height: 30px;
+    padding: 0 8px;
+    text-align: center;
+    margin-right: 12px;
+    color: #09a;
+  }
+  .page-nav .nav-item a:hover {
+    background: #f2f2f2;
+  }
+  .page-nav .nav-item a.nav-current{
+    background: #2bc;
+    border-color: #2bc;
+    color: #fff;
+  }
 
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;

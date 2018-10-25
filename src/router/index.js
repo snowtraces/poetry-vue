@@ -14,7 +14,7 @@ export default new Router({
       component: Layouts
     },
     {
-      path: '/search/:keyword',
+      path: '/search/:keyword/page/:page',
       name: 'List',
       component: List
     },

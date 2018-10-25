@@ -29,7 +29,7 @@ export default {
         return
       }
       this.$router.push({
-        path: `/search/${keyword}`
+        path: `/search/${keyword}/page/1`
       })
     }
   }
@@ -66,12 +66,12 @@ export default {
   }
 
   #header-search input[name=doSearch] {
-    padding: 3px 8px;
+    padding: 4px 14px;
     letter-spacing: 3px;
     background: transparent;
     position: absolute;
     top: 22px;
-    right: 8px;
+    right: 0;
     color: #2bc;
   }
 
