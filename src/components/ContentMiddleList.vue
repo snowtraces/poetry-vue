@@ -1,5 +1,5 @@
 <template>
-  <section class="content-middle">
+  <section class="content-middle" :key="this.keyword + '-' + this.page">
     <div class="search-result-desc" v-html="resultDesc()"></div>
     <div class="single list-single" v-for="(bean, id) in beanList" :key="id">
       <div class="poetry-title">
@@ -95,7 +95,7 @@ export default {
     color: #666;
   }
   .search-result-desc{
-    font-size: 0.75em;
+    font-size: 0.8em;
     color: #999;
     margin-bottom: 12px;
   }

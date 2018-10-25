@@ -4,7 +4,7 @@
     <section id="content">
       <section class="content-left"></section>
       <ContentMiddleSingle :bean="bean"></ContentMiddleSingle>
-      <!--<ContentRight :poetry="poetry" ></ContentRight>-->
+      <ContentRightSingle :poetry="bean" ></ContentRightSingle>
     </section>
     <section id="footer"></section>
   </div>
@@ -14,25 +14,41 @@
 import axios from 'axios'
 import Header from './Header'
 import ContentMiddleSingle from './ContentMiddleSingle'
+import ContentRightSingle from './ContentRightSingle'
 export default {
   name: 'Single',
-  components: {ContentMiddleSingle, Header},
+  components: {ContentMiddleSingle, Header, ContentRightSingle},
   data () {
     return {
       bean: [],
       errors: []
     }
   },
-  created () {
-    let id = this.$route.params.id
+  beforeRouteEnter (to, from, next) {
+    let id = to.params.id
     axios.get(`https://shicigefu.net/api/poetry/${id}?language=1`)
       .then(response => {
-        let data = response.data
-        this.bean = data.poetry
+        next(vm => vm.setData(response.data))
       })
       .catch(e => {
         this.errors.push(e)
       })
+  },
+  beforeRouteUpdate (to, from, next) {
+    let id = to.params.id
+    axios.get(`https://shicigefu.net/api/poetry/${id}?language=1`)
+      .then(response => {
+        this.setData(response.data)
+        next()
+      })
+      .catch(e => {
+        this.errors.push(e)
+      })
+  },
+  methods: {
+    setData (data) {
+      this.bean = data.poetry
+    }
   }
 }
 </script>

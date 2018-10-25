@@ -2,7 +2,7 @@
   <section class="content-middle">
     <div class="single">
       <div class="poetry-title">
-        <a>{{bean.title}}</a>
+        <h2>{{bean.title}}</h2>
       </div>
       <div class="poetry-author">{{bean.author}}</div>
       <div class="poetry-content">
@@ -30,7 +30,17 @@ export default {
   }
   .single{
     padding: 16px 24px;
-    border: 1px solid #ccc;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
     margin-bottom: 12px;
+    letter-spacing: 0.1em;
+  }
+  .poetry-title h2 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .poetry-author {
+    font-size: .8em;
+    color: #666;
+    padding-bottom: 1em;
   }
 </style>

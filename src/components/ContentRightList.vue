@@ -1,6 +1,6 @@
 <template>
   <section class="content-right">
-    <div class="sidebar-item">
+    <div class="sidebar-item" v-show="showTag()">
       <div class="item-header">推荐标签</div>
       <div class="item-content tag-list">
         <span class="tag-item" v-for="(item, key) in tagList" :key="key" ><a
@@ -14,7 +14,12 @@
 <script>
 export default {
   name: 'ContentRightList',
-  props: ['tagList', 'keyword']
+  props: ['tagList', 'keyword'],
+  methods: {
+    showTag: function () {
+      return this.tagList && Object.keys(this.tagList).length
+    }
+  }
 }
 </script>
 
@@ -29,9 +34,9 @@ export default {
     display: inline-block;
     line-height: 1;
     background: #ccc;
-    padding: 3px 5px;
+    padding: 5px;
     color: #fff;
-    margin-right: 5px;
+    margin: 0 7px 7px 0;
     border-radius: 3px;
     min-width: 38px !important;
   }
