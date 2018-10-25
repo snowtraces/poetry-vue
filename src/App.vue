@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view :key="$route.fullPath"/>
+    <router-view/>
   </div>
 </template>
 
@@ -57,7 +57,7 @@ export default {
   }
   .page-nav .nav-item a{
     display: inline-block;
-    border: 1px solid #ddd;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
     min-width: 32px;
     line-height: 30px;
     padding: 0 8px;

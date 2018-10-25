@@ -1,5 +1,6 @@
 <template>
   <section class="content-middle">
+    <div class="search-result-desc" v-html="resultDesc()"></div>
     <div class="single list-single" v-for="(bean, id) in beanList" :key="id">
       <div class="poetry-title">
         <a :href="getHref(bean.id)" v-html="emKeyword(bean.title)"></a>
@@ -9,14 +10,20 @@
           <span v-html="abstract(bean.contentList)"></span>
       </div>
     </div>
+    <PageNav :page="page" :total="total" :keyword="keyword"></PageNav>
   </section>
 </template>
 
 <script>
+import PageNav from './PageNav'
 export default {
   name: 'ContentMiddleList',
-  props: ['beanList', 'keyword', 'page', 'tagList'],
+  components: {PageNav},
+  props: ['beanList', 'keyword', 'page', 'tagList', 'total'],
   methods: {
+    resultDesc: function () {
+      return `获得约 ${this.total || 0} 条结果（第${this.page || 1}页）`
+    },
     getHref: function (id) {
       return `/#/poetry/${id}`
     },
@@ -68,9 +75,7 @@ export default {
     max-width: 670px;
   }
   .single{
-    padding: 16px 24px;
-    border: 1px solid #ccc;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
   }
   .list-single .poetry-content > span {
     font-size: 0.8125em;
@@ -88,5 +93,10 @@ export default {
     font-size: 0.8125em;
     margin-left: 4px;
     color: #666;
+  }
+  .search-result-desc{
+    font-size: 0.75em;
+    color: #999;
+    margin-bottom: 12px;
   }
 </style>

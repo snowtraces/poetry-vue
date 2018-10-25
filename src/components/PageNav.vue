@@ -1,7 +1,7 @@
 <template>
   <div class="page-nav">
     <div class="nav-pre" @click="navPre">上一页</div>
-    <div class="nav-num" v-html="pageNav(this.page, this.total)"></div>
+    <div class="nav-num" v-html="pageNav(this.page)"></div>
     <div class="nav-next" @click="navNext">下一页</div>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
     }
   },
   methods: {
-    pageNav: function (page, total) {
+    pageNav: function (page) {
       let nav = []
       let max = this.max
 
@@ -57,7 +57,7 @@ export default {
     display: inline-block;
   }
   .page-nav .nav-pre, .page-nav .nav-next{
-    border: 1px solid #ddd;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
     min-width: 32px;
     line-height: 30px;
     padding: 0 8px;

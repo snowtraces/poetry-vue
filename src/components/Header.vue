@@ -6,7 +6,7 @@
       </h1>
     </div>
     <div id="header-search">
-      <input type="text" v-model="keyword" @keyup.enter="search" name="keyword" autocomplete="off" placeholder="">
+      <input type="text" :value="keyword" @keyup.enter="search" name="keyword" autocomplete="off" placeholder="">
       <input type="button" name="doSearch" value="搜索" @click="search">
     </div>
   </section>
@@ -18,13 +18,17 @@ export default {
   props: ['inputKeyword'],
   data () {
     return {
-      title: '----',
-      keyword: this.$route.params.keyword
+      title: '----'
+    }
+  },
+  computed: {
+    keyword () {
+      return this.inputKeyword
     }
   },
   methods: {
-    search: function (e) {
-      let keyword = this.keyword
+    search: function () {
+      let keyword = document.querySelector('input[name=keyword]').value
       if (!keyword) {
         return
       }
