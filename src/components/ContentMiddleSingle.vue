@@ -2,22 +2,25 @@
   <section class="content-middle">
     <div class="single">
       <div class="poetry-title">
-        <h2>{{bean.title}}</h2>
+        <h2>{{poetry.title}}</h2>
       </div>
-      <div class="poetry-author">{{bean.author}}</div>
+      <div class="poetry-author">{{poetry.author}}</div>
       <div class="poetry-content">
-        <p v-for="(item, index) in bean.contentList" :key="index"> {{item}} </p>
+        <p v-for="(item, index) in poetry.contentList" :key="index"> {{item}} </p>
       </div>
     </div>
+    <AuthorDetail :author="author"></AuthorDetail>
+    <ShangXi :shangXi="shangXi"></ShangXi>
   </section>
 </template>
 
 <script>
+import AuthorDetail from './AuthorDetail'
+import ShangXi from './ShangXi'
 export default {
   name: 'ContentMiddleSingle',
-  props: ['bean'],
-  methods: {
-  }
+  components: {ShangXi, AuthorDetail},
+  props: ['poetry', 'author', 'shangXi']
 }
 </script>
 

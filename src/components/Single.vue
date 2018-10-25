@@ -3,8 +3,8 @@
     <Header></Header>
     <section id="content">
       <section class="content-left"></section>
-      <ContentMiddleSingle :bean="bean"></ContentMiddleSingle>
-      <ContentRightSingle :poetry="bean" ></ContentRightSingle>
+      <ContentMiddleSingle :poetry="poetry" :author="author" :shangXi="shangXi"></ContentMiddleSingle>
+      <ContentRightSingle :poetry="poetry" ></ContentRightSingle>
     </section>
     <section id="footer"></section>
   </div>
@@ -20,7 +20,9 @@ export default {
   components: {ContentMiddleSingle, Header, ContentRightSingle},
   data () {
     return {
-      bean: [],
+      poetry: {},
+      author: {},
+      shangXi: {},
       errors: []
     }
   },
@@ -47,7 +49,9 @@ export default {
   },
   methods: {
     setData (data) {
-      this.bean = data.poetry
+      this.poetry = data.poetry
+      this.author = data.author
+      this.shangXi = data.shangXi
     }
   }
 }
