@@ -1,6 +1,6 @@
 <template>
   <section class="content-right">
-    <div class="sidebar-item" v-show="showTag()">
+    <div class="sidebar-item" v-if="showTag()">
       <div class="item-header">推荐标签</div>
       <div class="item-content tag-list">
         <span class="tag-item" v-for="(item, key) in tagList" :key="key" ><a

@@ -1,6 +1,6 @@
 <template>
   <section class="content-right">
-    <div class="sidebar-item" v-show="showTag()">
+    <div class="sidebar-item" v-if="showTag()">
       <div class="item-header">关键词</div>
       <div class="item-content tag-list">
         <a class="meta-tag" v-for="item in poetry.tags" :key="item"
@@ -49,9 +49,9 @@ export default {
     line-height: 1;
     background: #2bc;
     padding: 6px 10px;
-    margin: 4px;
+    margin: 5px;
     color: #fff;
-    border-radius: 3px;
+    border-radius: 5px;
   }
   a.meta-keyword {
     display: inline-block;

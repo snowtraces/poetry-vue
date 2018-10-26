@@ -42,8 +42,8 @@ export default {
 
 <style scoped>
   #header {
-    background: antiquewhite;
-    height: 80px;
+    background: #eee;
+    height: 100px;
     margin-bottom: 24px;
   }
   h1 {
@@ -51,7 +51,7 @@ export default {
   }
   #header-title {
     width: 150px;
-    line-height: 80px;
+    line-height: 100px;
     position: absolute;
     top: 0;
     left: 0;
@@ -60,7 +60,7 @@ export default {
   #header-search{
     margin-left: 150px;
     margin-right: 300px;
-    padding: 20px 0;
+    padding: 30px 0;
     max-width: 670px;
     position: relative;
   }
@@ -75,7 +75,7 @@ export default {
     letter-spacing: 3px;
     background: transparent;
     position: absolute;
-    top: 22px;
+    top: 32px;
     right: 0;
     color: #2bc;
   }

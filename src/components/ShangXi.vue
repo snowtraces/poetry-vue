@@ -1,19 +1,22 @@
 <template>
-  <div class="middle-item">
-    <div class="item-header">诗词赏析</div>
-    <div class="item-content">
-      <div class="shangxi-content">
-        <p v-for="(p, index) in contentP(shangXi.content)" :key="index" >{{p}}</p>
+  <div class='middle-item'>
+    <div class='item-header'>诗词赏析</div>
+    <div class='item-content'>
+      <div class='shangxi-content'>
+        <p v-for='(p, index) in contentP(shangXi.content)' :key='index' >{{p}}</p>
       </div>
-      <div class="shangxi-author">作者：{{shangXi.author}}</div>
-      <div class="shangxi-source">{{shangXi.source}}</div>
+      <div class='shangxi-author'>作者：{{shangXi.author}}</div>
+      <div class='shangxi-source'>{{shangXi.source}}</div>
     </div>
+    <CopyButton></CopyButton>
   </div>
 </template>
 
 <script>
+import CopyButton from './CopyButton'
 export default {
   name: 'ShangXi',
+  components: {CopyButton},
   props: ['shangXi'],
   methods: {
     contentP: function (content) {
@@ -26,6 +29,7 @@ export default {
 <style scoped>
   .middle-item {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    position: relative;
   }
   .middle-item .item-header {
     padding: 8px 16px 0;

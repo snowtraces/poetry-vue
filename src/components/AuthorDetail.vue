@@ -6,12 +6,15 @@
       <div class="author-dynasty">{{dynasty}}</div>
       <div class="author-desc">{{author.desc}}</div>
     </div>
+    <CopyButton></CopyButton>
   </div>
 </template>
 
 <script>
+import CopyButton from './CopyButton'
 export default {
   name: 'AuthorDetail',
+  components: {CopyButton},
   props: ['author'],
   computed: {
     dynasty: function () {
@@ -25,6 +28,7 @@ export default {
 <style scoped>
   .middle-item {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    position: relative;
   }
   .middle-item .item-header {
     padding: 8px 16px 0;

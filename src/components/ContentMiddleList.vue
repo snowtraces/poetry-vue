@@ -10,7 +10,7 @@
           <span v-html="abstract(bean.contentList)"></span>
       </div>
     </div>
-    <PageNav :page="page" :total="total" :keyword="keyword"></PageNav>
+    <PageNav :page="page" :total="total" :keyword="keyword" v-if="total"></PageNav>
   </section>
 </template>
 
@@ -22,7 +22,7 @@ export default {
   props: ['beanList', 'keyword', 'page', 'tagList', 'total'],
   methods: {
     resultDesc: function () {
-      return `获得约 ${this.total || 0} 条结果（第${this.page || 1}页）`
+      return `获得约 ${this.total || 0} 条结果（第${this.page || 0}页）`
     },
     getHref: function (id) {
       return `/#/poetry/${id}`
