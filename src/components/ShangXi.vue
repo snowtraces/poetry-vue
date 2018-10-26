@@ -5,7 +5,8 @@
       <div class="shangxi-content">
         <p v-for="(p, index) in contentP(shangXi.content)" :key="index" >{{p}}</p>
       </div>
-      <div class="shangxi-author">{{shangXi.author}}</div>
+      <div class="shangxi-author">作者：{{shangXi.author}}</div>
+      <div class="shangxi-source">{{shangXi.source}}</div>
     </div>
   </div>
 </template>
@@ -16,7 +17,7 @@ export default {
   props: ['shangXi'],
   methods: {
     contentP: function (content) {
-      return content.split('\n')
+      return !content || content.split('\n')
     }
   }
 }
@@ -43,7 +44,11 @@ export default {
     letter-spacing: 1px;
     text-align: justify;
   }
-  .item-content > div {
-    display: inline;
+  .shangxi-content p {
+    padding-bottom: 1em;
+    text-indent: 2em;
+  }
+  .shangxi-source, .shangxi-author {
+    text-align: right;
   }
 </style>

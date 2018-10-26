@@ -2,7 +2,6 @@
   <div id="wrap">
     <Header></Header>
     <section id="content">
-      <section class="content-left"></section>
       <ContentMiddleSingle :poetry="poetry" :author="author" :shangXi="shangXi"></ContentMiddleSingle>
       <ContentRightSingle :poetry="poetry" ></ContentRightSingle>
     </section>
@@ -58,28 +57,5 @@ export default {
 </script>
 
 <style scoped>
-  #wrap {
-    height: 100%;
-  }
 
-  #content {
-    background: #fff;
-    min-height: calc(100% - 228px);
-    position: relative;
-    max-width: 1130px;
-  }
-
-  .content-left{
-    position: absolute;
-    width: 160px;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-
-  #footer {
-    background: #666;
-    height: 80px;
-    margin-top: 24px;
-  }
 </style>

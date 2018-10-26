@@ -2,7 +2,6 @@
   <div id="wrap">
     <Header :inputKeyword="keyword"></Header>
     <section id="content">
-      <section class="content-left"></section>
       <ContentMiddleList :beanList="beanList" :keyword="keyword" :page="page" :tagList="tagList" :total="total"></ContentMiddleList>
       <ContentRightList :tagList="tagList" :keyword="keyword"></ContentRightList>
     </section>
@@ -63,27 +62,4 @@ export default {
 }
 </script>
 <style lang="css" scoped>
-  #wrap {
-    height: 100%;
-  }
-
-  #content {
-    background: #fff;
-    min-height: calc(100% - 228px);
-    position: relative;
-    max-width: 1130px;
-  }
-
-  .content-left{
-    position: absolute;
-    width: 160px;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-  #footer {
-    background: #666;
-    height: 80px;
-    margin-top: 24px;
-  }
 </style>

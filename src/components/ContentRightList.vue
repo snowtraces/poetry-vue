@@ -26,7 +26,7 @@ export default {
 <style scoped>
   .content-right {
     position: absolute;
-    top: 0;
+    top: 35px;
     right: 0;
     width: 280px;
   }

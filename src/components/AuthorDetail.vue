@@ -35,13 +35,11 @@ export default {
   }
   .middle-item .item-content {
     padding: 12px 16px;
-    font-size: .875em;
   }
 
   .author-detail{
     padding: 16px 24px;
     margin-bottom: 12px;
-    letter-spacing: 1px;
     text-align: justify;
   }
   .author-detail > div {
@@ -58,7 +56,7 @@ export default {
     border-radius: 50%;
   }
   .author-desc{
-    font-size: 0.875em;
+    font-size: 0.8125em;
   }
   body .author-detail{
     line-height: 1.375;

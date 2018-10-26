@@ -18,7 +18,7 @@ export default {
   props: ['inputKeyword'],
   data () {
     return {
-      title: '----'
+      title: '诗词歌赋'
     }
   },
   computed: {
@@ -50,14 +50,15 @@ export default {
     margin: 0;
   }
   #header-title {
-    width: 160px;
+    width: 150px;
     line-height: 80px;
     position: absolute;
     top: 0;
     left: 0;
+    padding: 0 1.25em;
   }
   #header-search{
-    margin-left: 160px;
+    margin-left: 150px;
     margin-right: 300px;
     padding: 20px 0;
     max-width: 670px;
@@ -77,6 +78,13 @@ export default {
     top: 22px;
     right: 0;
     color: #2bc;
+  }
+
+  @media (max-width: 1200px) {
+    #header-search{
+      max-width: 536px;
+      margin-right: 316px;
+    }
   }
 
 </style>
