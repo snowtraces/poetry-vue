@@ -6,7 +6,8 @@
       </h1>
     </div>
     <div id="header-search">
-      <input type="text" :value="keyword" @keyup.enter="search" name="keyword" autocomplete="off" placeholder="">
+      <input type="text" :value="keyword" @keyup.enter="search" name="keyword" autocomplete="off"
+             :placeholder="searchHint">
       <input type="button" name="doSearch" value="搜索" @click="search">
     </div>
   </section>
@@ -18,7 +19,8 @@ export default {
   props: ['inputKeyword'],
   data () {
     return {
-      title: '诗词歌赋'
+      title: '诗词歌赋',
+      searchHint: '请输入 作者/标题/内容'
     }
   },
   computed: {

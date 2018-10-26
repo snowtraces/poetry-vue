@@ -26,7 +26,6 @@ export default {
       target.setSelectionRange(0, target.value.length)
       document.execCommand('copy')
       target.remove()
-
       current.innerText = '成功'
       current.style.color = '#666'
       setTimeout(function () {
@@ -43,17 +42,13 @@ export default {
     position: absolute;
     top: 16px;
     right: 16px;
-    background: none;
+    background: #fff;
     font-size: 0.8125em;
     border: 1px solid;
     padding: 0 8px;
     color: #2bc;
     border-radius: 4px;
     cursor: pointer;
-    -webkit-transition: prop 1s;
-    -moz-transition: prop 1s;
-    -ms-transition: prop 1s;
-    -o-transition: prop 1s;
-    transition: prop 1s;
+    opacity: 0.85;
   }
 </style>
