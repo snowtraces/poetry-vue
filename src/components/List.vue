@@ -3,7 +3,7 @@
     <Header :inputKeyword="keyword"></Header>
     <section id="content">
       <ContentMiddleList :beanList="beanList" :keyword="keyword" :page="page" :tagList="tagList" :total="total"></ContentMiddleList>
-      <ContentRightList :tagList="tagList" :keyword="keyword"></ContentRightList>
+      <ContentRightList :tagList="tagList" :keyword="keyword" :author="author"></ContentRightList>
     </section>
     <section id="footer"></section>
   </div>
@@ -24,6 +24,7 @@ export default {
       total: 0,
       tagList: [],
       beanList: [],
+      author: {},
       errors: []
     }
   },
@@ -57,6 +58,7 @@ export default {
       this.page = data.page
       this.tagList = data.relationTag
       this.total = data.total
+      this.author = data.author
     }
   }
 }

@@ -49,7 +49,7 @@ export default {
     line-height: 1;
     background: #2bc;
     padding: 6px 10px;
-    margin: 5px;
+    margin: 0 7px 7px 0;
     color: #fff;
     border-radius: 5px;
   }

@@ -2,7 +2,7 @@
   <div class="middle-item">
     <div class="item-header">作者详情</div>
     <div class="author-detail item-content">
-      <div class="author-name">{{author.name}}</div>
+      <div class="author-name"><a :href="'/#/search/author:' + author.name + '/page/1'">{{author.name}}</a></div>
       <div class="author-dynasty">{{dynasty}}</div>
       <div class="author-desc">{{author.desc}}</div>
     </div>
@@ -64,5 +64,9 @@ export default {
   }
   body .author-detail{
     line-height: 1.375;
+  }
+  body .author-detail .author-dynasty {
+    line-height: 1;
+    display: inline-block;
   }
 </style>
