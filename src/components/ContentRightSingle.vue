@@ -26,12 +26,6 @@ export default {
 </script>
 
 <style scoped>
-  .content-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 280px;
-  }
   .sidebar-item {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
   }

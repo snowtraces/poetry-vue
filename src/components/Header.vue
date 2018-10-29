@@ -2,7 +2,7 @@
   <section id="header">
     <div id="header-title">
       <h1>
-        <a href="/">{{title}}</a>
+        <a href="/#/">{{title}}</a>
       </h1>
     </div>
     <div id="header-search">
@@ -51,20 +51,8 @@ export default {
   h1 {
     margin: 0;
   }
-  #header-title {
-    width: 150px;
-    line-height: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0 1.25em;
-  }
-  #header-search{
-    margin-left: 150px;
-    margin-right: 300px;
-    padding: 30px 0;
-    max-width: 670px;
-    position: relative;
+  #header-title a {
+    color: #2bc;
   }
   #header-search input[name=keyword]{
     width: 100%;
@@ -80,13 +68,6 @@ export default {
     top: 32px;
     right: 0;
     color: #2bc;
-  }
-
-  @media (max-width: 1200px) {
-    #header-search{
-      max-width: 536px;
-      margin-right: 316px;
-    }
   }
 
 </style>

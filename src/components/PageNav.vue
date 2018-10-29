@@ -55,6 +55,7 @@ export default {
 <style scoped>
   .page-nav > div {
     display: inline-block;
+    margin-bottom: 5px;
   }
   .page-nav .nav-pre, .page-nav .nav-next{
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);

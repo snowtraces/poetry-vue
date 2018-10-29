@@ -1,70 +1,13 @@
 <template>
-  <div id="wrap">
-    <Header></Header>
-    <section id="content">
-      <section class="content-left"></section>
-      <ContentMiddle :poetry="poetry" :author="author"></ContentMiddle>
-      <ContentRight :poetry="poetry" ></ContentRight>
-    </section>
-    <section id="footer"></section>
-  </div>
+  <div></div>
 </template>
-
 <script>
-import axios from 'axios'
-import Header from './Header'
-import ContentMiddle from './ContentMiddle'
-import ContentRight from './ContentRight'
 export default {
   name: 'Layouts',
-  components: {ContentRight, ContentMiddle, Header},
-  data () {
-    return {
-      poetry: {},
-      author: {},
-      shangxi: {},
-      errors: []
-    }
-  },
   created () {
-    axios.get(`https://shicigefu.net/api/poetry/1391?language=1`)
-      .then(response => {
-        let data = response.data
-        this.poetry = data.poetry
-        this.author = data.author
-        this.shangxi = data.shangxi
-      })
-      .catch(e => {
-        this.errors.push(e)
-      })
+    this.$router.push({path: '/poetry/1391'})
   }
 }
 </script>
 <style lang="css" scoped>
-  #wrap {
-    height: 100%;
-  }
-
-  #content {
-    background: #fff;
-    min-height: calc(100% - 228px);
-    position: relative;
-    max-width: 1130px;
-  }
-
-  .content-left{
-    position: absolute;
-    width: 160px;
-    height: 100%;
-    /*background: #888;*/
-    top: 0;
-    left: 0;
-  }
-
-  #footer {
-    background: #666;
-    height: 80px;
-    margin-top: 24px;
-  }
-
 </style>

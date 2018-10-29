@@ -41,11 +41,8 @@ export default {
 </script>
 
 <style scoped>
-  .content-right {
-    position: absolute;
+.content-right {
     top: 35px;
-    right: 0;
-    width: 280px;
   }
   span.tag-item a{
     display: inline-block;

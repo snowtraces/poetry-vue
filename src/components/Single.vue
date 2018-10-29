@@ -5,7 +5,7 @@
       <ContentMiddleSingle :poetry="poetry" :author="author" :shangXi="shangXi"></ContentMiddleSingle>
       <ContentRightSingle :poetry="poetry" ></ContentRightSingle>
     </section>
-    <section id="footer"></section>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -14,9 +14,10 @@ import axios from 'axios'
 import Header from './Header'
 import ContentMiddleSingle from './ContentMiddleSingle'
 import ContentRightSingle from './ContentRightSingle'
+import Footer from './Footer'
 export default {
   name: 'Single',
-  components: {ContentMiddleSingle, Header, ContentRightSingle},
+  components: {Footer, ContentMiddleSingle, Header, ContentRightSingle},
   data () {
     return {
       poetry: {},

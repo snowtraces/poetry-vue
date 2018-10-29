@@ -5,7 +5,7 @@
       <ContentMiddleList :beanList="beanList" :keyword="keyword" :page="page" :tagList="tagList" :total="total"></ContentMiddleList>
       <ContentRightList :tagList="tagList" :keyword="keyword" :author="author"></ContentRightList>
     </section>
-    <section id="footer"></section>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -14,9 +14,10 @@ import axios from 'axios'
 import Header from './Header'
 import ContentMiddleList from './ContentMiddleList'
 import ContentRightList from './ContentRightList'
+import Footer from './Footer'
 export default {
   name: 'Layouts',
-  components: {ContentMiddleList, ContentRightList, Header},
+  components: {Footer, ContentMiddleList, ContentRightList, Header},
   data () {
     return {
       keyword: '',
