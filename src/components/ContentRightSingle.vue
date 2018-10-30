@@ -3,9 +3,9 @@
     <div class="sidebar-item" v-if="showTag()">
       <div class="item-header">关键词</div>
       <div class="item-content tag-list">
-        <a class="meta-tag" v-for="item in poetry.tags" :key="item"
+        <a class="meta-tag" v-for="item in poetry.tags" :key="item + '-tag'"
           :href="'/#/search/tag:' + item + '/page/1'">{{item}}</a>
-        <a class="meta-keyword" v-for="item in poetry.keywords" :key="item"
+        <a class="meta-keyword" v-for="item in poetry.keywords" :key="item + '-keyword'"
            :href="'/#/search/' + item + '/page/1'">{{item}}</a>
       </div>
     </div>

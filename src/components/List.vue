@@ -60,6 +60,12 @@ export default {
       this.tagList = data.relationTag
       this.total = data.total
       this.author = data.author
+      console.log(this.tagList)
+      this.initHead({
+        title: `与[${this.keyword.substring(this.keyword.lastIndexOf(':') + 1)}]有关的诗词`,
+        keywords: `${this.tagList ? Object.keys(this.tagList).join(', ') : ''}`,
+        description: `与[${this.keyword.substring(this.keyword.lastIndexOf(':') + 1)}]有关的诗词`
+      })
     }
   }
 }

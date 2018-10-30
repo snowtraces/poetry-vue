@@ -52,6 +52,12 @@ export default {
       this.poetry = data.poetry
       this.author = data.author
       this.shangXi = data.shangXi
+      this.initHead({
+        title: `${this.poetry ? this.poetry.title : ''}[${this.poetry ? this.poetry.author : ''}]`,
+        keywords: `${this.poetry.tags ? this.poetry.tags.join(', ') + ', '
+          : ''}${this.poetry.keywords ? this.poetry.keywords.join(', ') : ''}`,
+        description: `${this.poetry.contentList ? this.poetry.contentList.join('') : ''}`
+      })
     }
   }
 }
