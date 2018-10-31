@@ -65,7 +65,7 @@ export default {
     text-align: center;
     margin-right: 12px;
     color: #09a;
-    font-size: 14px;
+    font-size: 0.875em;
     cursor: pointer;
   }
   .page-nav .nav-pre:hover, .page-nav .nav-next:hover {

@@ -68,13 +68,6 @@ export default {
 </script>
 
 <style scoped>
-  .single{
-    padding: 16px 24px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-    margin-bottom: 12px;
-    letter-spacing: 0.1em;
-  }
-
   .list-single .poetry-content > span {
     font-size: 0.8125em;
   }

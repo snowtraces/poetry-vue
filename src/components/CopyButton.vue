@@ -15,9 +15,12 @@ export default {
 
       let target = document.createElement('textarea')
       target.style.position = 'absolute'
-      target.style.opacity = 0
-      target.style.left = '-99999px'
+      target.style.opacity = '0'
+      target.style.width = '0'
+      target.style.height = '0'
+      target.style.left = '0'
       target.style.top = '0'
+      target.style.zIndex = '-9999'
       target.id = 'tmp_copy_id'
       current.append(target)
       target.textContent = content

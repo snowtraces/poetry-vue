@@ -27,15 +27,8 @@ export default {
 </script>
 
 <style scoped>
-  .single{
-    padding: 16px 24px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-    margin-bottom: 12px;
-    letter-spacing: 0.1em;
-    position: relative;
-  }
   .poetry-title h2 {
-    font-size: 18px;
+    font-size: 1.125em;
     font-weight: 600;
   }
   .poetry-author {

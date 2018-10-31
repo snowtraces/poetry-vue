@@ -27,25 +27,13 @@ export default {
 </script>
 
 <style scoped>
-  .middle-item {
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-    position: relative;
-  }
-  .middle-item .item-header {
-    padding: 8px 16px 0;
-    border-top:1px solid #2bc;
-    font-size: 0.9375em;
-    font-weight: 800;
-    color: rgba(34, 187, 204, 0.8);
-  }
   .middle-item .item-content {
-    padding: 12px 16px;
     font-size: .875em;
   }
 
   .shangxi-content{
     margin-bottom: 12px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-align: justify;
   }
   .shangxi-content p {
