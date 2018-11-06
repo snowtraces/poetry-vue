@@ -43,31 +43,5 @@ export default {
 </script>
 
 <style scoped>
-  #header {
-    background: #eee;
-    height: 100px;
-    margin-bottom: 24px;
-  }
-  h1 {
-    margin: 0;
-  }
-  #header-title a {
-    color: #2bc;
-  }
-  #header-search input[name=keyword]{
-    width: 100%;
-    padding: 5px 60px 5px 12px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
-  }
-
-  #header-search input[name=doSearch] {
-    padding: 4px 14px;
-    letter-spacing: 3px;
-    background: transparent;
-    position: absolute;
-    top: 32px;
-    right: 0;
-    color: #2bc;
-  }
 
 </style>

@@ -1,39 +1,68 @@
 <template>
   <section class="content-middle">
-    <div class="single">
-      <div class="poetry-title">
+    <Card class="single has-shadow" v-if="poetry">
+      <div class="card-title poetry-title">
         <h2>{{poetry.title}}</h2>
+        <div class="poetry-author">{{poetry.author}}</div>
       </div>
-      <div class="poetry-author">{{poetry.author}}</div>
-      <div class="poetry-content">
+      <div class="card-content">
         <p v-for="(item, index) in poetry.contentList" :key="index"> {{item}} </p>
       </div>
       <CopyButton></CopyButton>
-    </div>
-    <AuthorDetail :author="author" v-if="author"></AuthorDetail>
-    <ShangXi :shangXi="shangXi" v-if="shangXi"></ShangXi>
+    </Card>
+    <Card class="has-shadow" v-if="author">
+      <div class="card-title em-color-title">作者详情</div>
+      <div class="card-content is-inline">
+        <div class="author-name is-color font-1125"><a :href="'/#/search/author:' + author.name + '/page/1'">{{author.name}}</a></div>
+        <div class="author-dynasty is-white font-75 is-round">{{dynasty}}</div>
+        <div class="author-desc font-8125">{{author.desc}}</div>
+      </div>
+      <CopyButton></CopyButton>
+    </Card>
+    <Card class="has-shadow shangxi-card" v-if="shangXi">
+      <div class="card-title em-color-title">诗词赏析</div>
+      <div class="card-content font-875">
+        <p v-for="(p, index) in contentP(shangXi.content)" :key="index" >{{p}}</p>
+        <div class="text-right">作者：{{shangXi.author}}</div>
+        <div class="text-right">{{shangXi.source}}</div>
+      </div>
+      <CopyButton></CopyButton>
+    </Card>
   </section>
 </template>
 
 <script>
-import AuthorDetail from './AuthorDetail'
-import ShangXi from './ShangXi'
 import CopyButton from './CopyButton'
+import Card from './base/Card'
 export default {
   name: 'ContentMiddleSingle',
-  components: {CopyButton, ShangXi, AuthorDetail},
-  props: ['poetry', 'author', 'shangXi']
+  components: {Card, CopyButton},
+  props: ['poetry', 'author', 'shangXi'],
+  computed: {
+    dynasty: function () {
+      let dynasty = this.author.dynasty
+      return dynasty === 'tang' ? '唐' : dynasty === 'song' ? '宋' : ''
+    }
+  },
+  methods: {
+    contentP: function (content) {
+      return !content || content.split('\n')
+    }
+  }
 }
 </script>
 
 <style scoped>
-  .poetry-title h2 {
-    font-size: 1.125em;
-    font-weight: 600;
-  }
   .poetry-author {
     font-size: .8em;
     color: #666;
-    padding-bottom: 1em;
   }
+  .single {
+    letter-spacing: 0.1em;
+  }
+  .shangxi-card .card-content p {
+    padding-bottom: 1em;
+    text-indent: 2em;
+  }
+
 </style>

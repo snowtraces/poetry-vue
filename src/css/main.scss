@@ -1,3 +1,4 @@
+$green: #2bc; /*#3367d6 */
 body,html {
   height: 100%;
   min-width: 360px;
@@ -35,37 +36,67 @@ body, input, textarea, button {
   -webkit-appearance: none;
   border-radius: 0
 }
-
-div.clearfix {
-  clear: both;
-}
-em {
-  color: red;
-}
-.page-nav .nav-item a{
-  display: inline-block;
+.has-shadow {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-  min-width: 32px;
-  line-height: 30px;
-  padding: 0 8px;
-  text-align: center;
-  margin-right: 12px;
-  color: #09a;
 }
-.page-nav .nav-item a:hover {
-  background: #f2f2f2;
+.is-inline > * {
+  display: inline;
 }
-.page-nav .nav-item a.nav-current{
-  background: #2bc;
-  border-color: #2bc;
+.is-color {
+  color: $green !important;
+}
+.is-white {
   color: #fff;
+  padding: 1px;
+  background-color: $green;
+  display: inline-block;
+  line-height: 1;
 }
-
+.is-gray {
+  color: #666;
+}
+.font-75 {
+  font-size: 0.75em;
+}
+.font-8125 {
+  font-size: 0.8125em;
+}
+.font-875 {
+  font-size: 0.875em;
+}
+.font-1125 {
+  font-size: 1.125em;
+}
+.is-round {
+  border-radius: 50%;
+}
+.no-top-padding {
+  padding-top: 0 !important;
+}
+.em-color-title {
+  border-top:1px solid;
+  font-size: 0.9375em;
+  font-weight: 800;
+  line-height: 1;
+  color: $green;
+}
+.text-right {
+  text-align: right;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+}
+h1 {
+  margin: 0;
+}
+div.clearfix {
+  clear: both;
+}
+em {
+  color: red;
 }
 
 #wrap {
@@ -79,6 +110,12 @@ em {
   max-width: 1104px;
   margin: 0 16px;
 }
+
+#header {
+  background: #eee;
+  height: 100px;
+  margin-bottom: 24px;
+}
 #header-title {
   width: 150px;
   line-height: 100px;
@@ -87,12 +124,31 @@ em {
   left: 0;
   padding-left: 1.75em;
 }
+#header-title a {
+  color: $green;
+}
 #header-search{
   margin-left: 150px;
   margin-right: 300px;
   padding: 30px 0;
   max-width: 670px;
   position: relative;
+}
+
+#header-search input[name=keyword]{
+  width: 100%;
+  padding: 5px 60px 5px 12px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+#header-search input[name=doSearch] {
+  padding: 4px 14px;
+  letter-spacing: 3px;
+  background: transparent;
+  position: absolute;
+  top: 32px;
+  right: 0;
+  color: $green;
 }
 
 .content-left{
@@ -110,36 +166,35 @@ em {
   max-width: 670px;
 }
 
-.middle-item {
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-  position: relative;
-  margin-bottom: 16px;
-}
-.middle-item .item-header {
-  padding: 8px 16px 0;
-  border-top:1px solid #2bc;
-  font-size: 0.9375em;
-  font-weight: 800;
-  color: rgba(34, 187, 204, 0.8);
-}
-.middle-item .item-content {
-  padding: 12px 16px;
-}
-
-.single{
-  padding: 16px 24px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-  margin-bottom: 12px;
-  letter-spacing: 0.1em;
-  position: relative;
-}
-
 .content-right {
   position: absolute;
   top: 0;
   right: 0;
   width: 280px;
 }
+
+.page-nav .nav-item a{
+  display: inline-block;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  min-width: 32px;
+  line-height: 30px;
+  padding: 0 8px;
+  text-align: center;
+  margin-right: 12px;
+  color: #09a;
+}
+.page-nav .nav-item a:hover {
+  background: #f2f2f2;
+}
+.page-nav .nav-item a.nav-current{
+  background: $green;
+  border-color: $green;
+  color: #fff;
+}
+.copy {
+  color: $green;
+}
+
 
 #footer {
   background: #666;
@@ -193,9 +248,7 @@ em {
   #content {
     margin: 0 8px;
   }
-  .single {
-    padding: 12px 16px;
-  }
+
 }
 
 

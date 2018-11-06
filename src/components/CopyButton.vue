@@ -30,10 +30,10 @@ export default {
       document.execCommand('copy')
       target.remove()
       current.innerText = '成功'
-      current.style.color = '#666'
+      current.style.opacity = '0.5'
       setTimeout(function () {
         current.innerText = '复制'
-        current.style.color = '#2bc'
+        current.style.opacity = '0.85'
       }, 1000)
     }
   }
@@ -48,8 +48,8 @@ export default {
     background: #fff;
     font-size: 0.8125em;
     border: 1px solid;
-    padding: 0 8px;
-    color: #2bc;
+    line-height: 1;
+    padding: 5px 8px;
     border-radius: 4px;
     cursor: pointer;
     opacity: 0.85;
