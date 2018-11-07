@@ -3,7 +3,7 @@
     <!--正文-->
     <Card class="single has-shadow" v-if="poetry">
       <div class="card-title poetry-title padding-125">
-        <h2>{{poetry.title}}</h2>
+        <h2 class="font-1125">{{poetry.title}}</h2>
         <div class="poetry-author">{{poetry.author}}</div>
       </div>
       <div class="card-content padding-125 no-top-padding">

@@ -15,8 +15,4 @@ export default {
     position: relative;
     margin-bottom: 0.75em;
   }
-  .card .card-title h2 {
-    font-size: 1.125em;
-    font-weight: 600;
-  }
 </style>

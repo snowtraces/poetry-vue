@@ -49,7 +49,6 @@ export default {
   },
   methods: {
     setData (data) {
-      console.log(data)
       this.poetry = data.poetry
       this.author = data.author
       this.shangXi = data.shangXi
