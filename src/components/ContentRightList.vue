@@ -3,8 +3,8 @@
     <Card v-if="showTag()" class="has-shadow">
       <div class="card-title light-color-title padding-1">推荐标签</div>
       <div class="card-content padding-1">
-        <span class="tag-item" v-for="(item, key) in tagList" :key="key" ><a
-          :style="{width: item * 0.45 + '%', background: 'rgba(34, 187, 204, ' + Math.max(item/100, 0.3) + ')'}"
+        <span class="tag-item is" v-for="(item, key) in tagList" :key="key" ><a class="is-background-color"
+          :style="{width: item * 0.45 + '%', opacity: Math.max(item/100, 0.3)}"
           :href="'/#/search/' + key + '/page/1'">{{key}}</a></span>
       </div>
     </Card>
@@ -12,7 +12,7 @@
       <div class="card-title light-color-title padding-1">作者详情</div>
       <div class="card-content padding-1 is-inline is-narrow-row is-justify">
         <div class="author-name is-color font-1125"><a :href="'/#/search/author:' + author.name + '/page/1'">{{author.name}}</a></div>
-        <div class="author-dynasty is-white font-75 is-round">{{dynasty}}</div>
+        <div class="author-dynasty is-white-button font-75 is-round">{{dynasty}}</div>
         <div class="author-desc font-8125">{{author.desc}}</div>
       </div>
     </Card>
@@ -43,13 +43,9 @@ export default {
 </script>
 
 <style scoped>
-  .content-right {
-    top: 35px;
-  }
   span.tag-item a{
     display: inline-block;
     line-height: 1;
-    background: #ccc;
     padding: 5px;
     color: #fff;
     margin: 0 7px 7px 0;

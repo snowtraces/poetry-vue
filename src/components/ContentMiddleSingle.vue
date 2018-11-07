@@ -16,7 +16,7 @@
       <div class="card-title em-color-title padding-125">作者详情</div>
       <div class="card-content is-inline padding-125 no-top-padding is-narrow-row is-justify">
         <div class="author-name is-color font-1125"><a :href="'/#/search/author:' + author.name + '/page/1'">{{author.name}}</a></div>
-        <div class="author-dynasty is-white font-75 is-round">{{dynasty}}</div>
+        <div class="author-dynasty is-white-button font-75 is-round">{{dynasty}}</div>
         <div class="author-desc font-8125">{{author.desc}}</div>
       </div>
       <CopyButton></CopyButton>

@@ -1,4 +1,7 @@
-$green: #2bc; /*#3367d6 */
+//$color: #2bc;
+$color: #3367d6;
+$bg-color: #1a73e8;
+$visited-color: #7b1fa2;
 body,html {
   height: 100%;
   min-width: 360px;
@@ -36,6 +39,23 @@ body, input, textarea, button {
   -webkit-appearance: none;
   border-radius: 0
 }
+a {
+  color: $color;
+}
+a:visited {
+  color: $visited-color;
+}
+.logo-svg{
+  height: 22px !important;
+  width:auto;
+  margin-right: 1px;
+}
+.logo-svg path{
+  fill: $color;
+  stroke: $color;
+  stroke-width: 4px;
+}
+
 .has-shadow {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 }
@@ -45,18 +65,27 @@ body, input, textarea, button {
 .is-inline-block {
   display: inline-block;
 }
+.is-background-color {
+  background: $bg-color;
+}
 .is-color {
-  color: $green !important;
+  color: $color !important;
 }
 .is-white {
   color: #fff;
+}
+.is-white-button {
+  color: #fff;
   padding: 1px;
-  background-color: $green;
+  background-color: $color;
   display: inline-block;
   line-height: 1;
 }
 .is-gray {
   color: #666;
+}
+.is-gray-white {
+  color: #999;
 }
 .is-justify{
   text-align: justify;
@@ -79,6 +108,9 @@ body, input, textarea, button {
 .is-round {
   border-radius: 50%;
 }
+.is-radius-5 {
+  border-radius: 5px;
+}
 .no-top-padding {
   padding-top: 0 !important;
 }
@@ -98,12 +130,12 @@ body, input, textarea, button {
   border-top:1px solid;
   font-size: 0.9375em;
   font-weight: 800;
-  color: $green;
+  color: $color;
 }
 .light-color-title {
   border-bottom: 1px solid;
   font-size: 0.9375em;
-  color: $green;
+  color: $color;
 }
 .text-right {
   text-align: right;
@@ -130,7 +162,7 @@ em {
 
 #content {
   background: #fff;
-  min-height: calc(100% - 228px);
+  min-height: calc(100% - 220px);
   position: relative;
   max-width: 1104px;
   margin: 0 16px;
@@ -143,14 +175,15 @@ em {
 }
 #header-title {
   width: 150px;
-  line-height: 100px;
   position: absolute;
+  line-height: 1;
+  padding-top: 38px;
   top: 0;
   left: 0;
-  padding-left: 1.75em;
+  padding-left: 1.25em;
 }
 #header-title a {
-  color: $green;
+  color: $color;
 }
 #header-search{
   margin-left: 150px;
@@ -173,7 +206,7 @@ em {
   position: absolute;
   top: 32px;
   right: 0;
-  color: $green;
+  color: $color;
 }
 
 .content-left{
@@ -206,25 +239,23 @@ em {
   padding: 0 8px;
   text-align: center;
   margin-right: 12px;
-  color: #09a;
+  color: $color;
 }
 .page-nav .nav-item a:hover {
   background: #f2f2f2;
 }
 .page-nav .nav-item a.nav-current{
-  background: $green;
-  border-color: $green;
+  background: $bg-color;
   color: #fff;
 }
 .copy {
-  color: $green;
+  color: $color;
 }
-
 
 #footer {
   background: #666;
   height: 80px;
-  margin-top: 24px;
+  margin-top: 1em;
 }
 .footer-bottom {
   margin-left: 150px;
@@ -259,15 +290,13 @@ em {
     position: relative;
     top: 0 !important;
     width: auto;
-    /*margin-top: 16px;*/
   }
   #header-title {
-    padding-left: 1em;
-    width: 130px;
+    padding-left: 0.75em;
   }
   #header-search{
     margin-right: 8px;
-    margin-left: 130px;
+    margin-left: 145px;
   }
 
   #content {

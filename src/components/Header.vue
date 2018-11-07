@@ -2,7 +2,7 @@
   <section id="header">
     <div id="header-title">
       <h1>
-        <a href="/#/">{{title}}</a>
+        <a href="/#/" :title="title"><Logo></Logo></a>
       </h1>
     </div>
     <div id="header-search">
@@ -14,8 +14,10 @@
 </template>
 
 <script>
+import Logo from './base/Logo'
 export default {
   name: 'Header',
+  components: {Logo},
   props: ['inputKeyword'],
   data () {
     return {

@@ -3,9 +3,9 @@
     <Card  v-if="showTag()" class="has-shadow">
       <div class="card-title light-color-title padding-1">关键词</div>
       <div class="card-content padding-1 font-875">
-        <a class="meta-tag" v-for="item in poetry.tags" :key="item + '-tag'"
+        <a class="meta-tag is-inline-block is-background-color is-radius-5 " v-for="item in poetry.tags" :key="item + '-tag'"
            :href="'/#/search/tag:' + item + '/page/1'">{{item}}</a>
-        <a class="meta-keyword" v-for="item in poetry.keywords" :key="item + '-keyword'"
+        <a class="meta-keyword is-inline-block" v-for="item in poetry.keywords" :key="item + '-keyword'"
            :href="'/#/search/' + item + '/page/1'">{{item}}</a>
       </div>
     </Card>
@@ -29,19 +29,14 @@ export default {
 
 <style scoped>
   a.meta-tag {
-    display: inline-block;
     line-height: 1;
-    background: #2bc;
     padding: 6px 10px;
     margin: 0 7px 7px 0;
     color: #fff;
-    border-radius: 5px;
   }
   a.meta-keyword {
-    display: inline-block;
     line-height: 1;
     padding: 10px;
-    border-radius: 3px;
   }
 
 </style>

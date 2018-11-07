@@ -1,6 +1,8 @@
 <template>
   <section class="content-middle" :key="this.keyword + '-' + this.page">
-    <div class="search-result-desc" v-html="resultDesc()"></div>
+    <Card class="has-shadow padding-1 font-8125 is-gray-white">
+      <div v-html="resultDesc()"></div>
+    </Card>
     <Card class="single has-shadow" v-for="(bean, id) in beanList" :key="id">
       <div class="card-title is-inline padding-125 no-bottom-padding">
         <a class="font-1125" :href="'/#/poetry/' + bean.id" v-html="emKeyword(bean.title, keyword)"></a>
@@ -31,11 +33,6 @@ export default {
 </script>
 
 <style scoped>
-  .search-result-desc{
-    font-size: 0.8em;
-    color: #999;
-    margin-bottom: 12px;
-  }
   .single {
     line-height: 1.5;
     letter-spacing: 1px;

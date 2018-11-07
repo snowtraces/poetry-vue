@@ -53,9 +53,12 @@ export default {
 </script>
 
 <style scoped>
+  .page-nav {
+    margin-bottom: 0.45em;
+  }
   .page-nav > div {
     display: inline-block;
-    margin-bottom: 5px;
+    margin-bottom: 0.3em;
   }
   .page-nav .nav-pre, .page-nav .nav-next{
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
@@ -64,7 +67,6 @@ export default {
     padding: 0 8px;
     text-align: center;
     margin-right: 12px;
-    color: #09a;
     font-size: 0.875em;
     cursor: pointer;
   }
