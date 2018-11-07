@@ -1,27 +1,29 @@
 <template>
   <section class="content-right">
-    <div class="sidebar-item" v-if="showTag()">
-      <div class="item-header">推荐标签</div>
-      <div class="item-content tag-list">
+    <Card v-if="showTag()" class="has-shadow">
+      <div class="card-title light-color-title padding-1">推荐标签</div>
+      <div class="card-content padding-1">
         <span class="tag-item" v-for="(item, key) in tagList" :key="key" ><a
           :style="{width: item * 0.45 + '%', background: 'rgba(34, 187, 204, ' + Math.max(item/100, 0.3) + ')'}"
           :href="'/#/search/' + key + '/page/1'">{{key}}</a></span>
       </div>
-    </div>
-    <div class="sidebar-item" v-if="showAuthor()">
-      <div class="item-header">作者详情</div>
-      <div class="item-content author-detail">
-        <div class="author-name"><a :href="'/#/search/author:' + author.name + '/page/1'">{{author.name}}</a></div>
-        <div class="author-dynasty">{{dynasty}}</div>
-        <div class="author-desc">{{author.desc}}</div>
+    </Card>
+    <Card v-if="showAuthor()" class="has-shadow">
+      <div class="card-title light-color-title padding-1">作者详情</div>
+      <div class="card-content padding-1 is-inline is-narrow-row is-justify">
+        <div class="author-name is-color font-1125"><a :href="'/#/search/author:' + author.name + '/page/1'">{{author.name}}</a></div>
+        <div class="author-dynasty is-white font-75 is-round">{{dynasty}}</div>
+        <div class="author-desc font-8125">{{author.desc}}</div>
       </div>
-    </div>
+    </Card>
   </section>
 </template>
 
 <script>
+import Card from './base/Card'
 export default {
   name: 'ContentRightList',
+  components: {Card},
   props: ['tagList', 'keyword', 'author'],
   methods: {
     showTag: function () {
@@ -41,7 +43,7 @@ export default {
 </script>
 
 <style scoped>
-.content-right {
+  .content-right {
     top: 35px;
   }
   span.tag-item a{
@@ -54,43 +56,7 @@ export default {
     border-radius: 3px;
     min-width: 38px !important;
   }
-  .sidebar-item {
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-  }
-  .sidebar-item .item-header {
-    padding: 8px 16px;
-    border-bottom:1px solid #2bc;
-    font-size: 0.9375em;
-  }
-  .sidebar-item .item-content {
-    padding: 12px 16px;
-  }
   .tag-item {
     font-size: .875em;
-  }
-
-  .author-detail{
-    padding: 16px 24px;
-    margin-bottom: 12px;
-    text-align: justify;
-  }
-  .author-detail > div {
-    display: inline;
-  }
-  .author-name{
-    font-size: 1.125em;
-  }
-  .author-dynasty{
-    font-size: 0.75em;
-    background: #2bc;
-    color: #fff;
-    padding: 1px;
-    border-radius: 50%;
-  }
-  .author-desc{
-    font-size: 0.8125em;
-  }
-  body .author-detail{
-    line-height: 1.375;
   }
 </style>

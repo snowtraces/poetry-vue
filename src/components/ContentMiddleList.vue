@@ -2,11 +2,11 @@
   <section class="content-middle" :key="this.keyword + '-' + this.page">
     <div class="search-result-desc" v-html="resultDesc()"></div>
     <Card class="single has-shadow" v-for="(bean, id) in beanList" :key="id">
-      <div class="card-title is-inline">
+      <div class="card-title is-inline padding-125 no-bottom-padding">
         <a class="font-1125" :href="'/#/poetry/' + bean.id" v-html="emKeyword(bean.title, keyword)"></a>
         <div class="font-8125 is-gray" v-html="'[' + emKeyword(bean.author, keyword) + ']'"></div>
       </div>
-      <div class="card-content no-top-padding" >
+      <div class="card-content padding-125 no-top-padding" >
           <span class="font-8125" v-html="emKeyword(abstract(bean.contentList.join(''), keyword), keyword)"></span>
       </div>
     </Card>

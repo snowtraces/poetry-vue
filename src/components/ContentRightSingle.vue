@@ -1,20 +1,22 @@
 <template>
   <section class="content-right">
-    <div class="sidebar-item" v-if="showTag()">
-      <div class="item-header">关键词</div>
-      <div class="item-content tag-list">
+    <Card  v-if="showTag()" class="has-shadow">
+      <div class="card-title light-color-title padding-1">关键词</div>
+      <div class="card-content padding-1 font-875">
         <a class="meta-tag" v-for="item in poetry.tags" :key="item + '-tag'"
-          :href="'/#/search/tag:' + item + '/page/1'">{{item}}</a>
+           :href="'/#/search/tag:' + item + '/page/1'">{{item}}</a>
         <a class="meta-keyword" v-for="item in poetry.keywords" :key="item + '-keyword'"
            :href="'/#/search/' + item + '/page/1'">{{item}}</a>
       </div>
-    </div>
+    </Card>
   </section>
 </template>
 
 <script>
+import Card from './base/Card'
 export default {
   name: 'ContentRightSingle',
+  components: {Card},
   props: ['poetry'],
   methods: {
     showTag: function () {
@@ -26,18 +28,6 @@ export default {
 </script>
 
 <style scoped>
-  .sidebar-item {
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-  }
-  .sidebar-item .item-header {
-    padding: 8px 16px;
-    border-bottom:1px solid #2bc;
-    font-size: 0.9375em;
-  }
-  .sidebar-item .item-content {
-    padding: 12px 16px;
-    font-size: .875em;
-  }
   a.meta-tag {
     display: inline-block;
     line-height: 1;

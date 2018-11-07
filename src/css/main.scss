@@ -42,6 +42,9 @@ body, input, textarea, button {
 .is-inline > * {
   display: inline;
 }
+.is-inline-block {
+  display: inline-block;
+}
 .is-color {
   color: $green !important;
 }
@@ -55,6 +58,9 @@ body, input, textarea, button {
 .is-gray {
   color: #666;
 }
+.is-justify{
+  text-align: justify;
+}
 .font-75 {
   font-size: 0.75em;
 }
@@ -67,17 +73,36 @@ body, input, textarea, button {
 .font-1125 {
   font-size: 1.125em;
 }
+.is-narrow-row{
+  line-height: 1.375em;
+}
 .is-round {
   border-radius: 50%;
 }
 .no-top-padding {
   padding-top: 0 !important;
 }
+.no-bottom-padding {
+  padding-bottom: 0 !important;
+}
+.padding-15 {
+  padding: 1.5em;
+}
+.padding-125 {
+  padding: 1em 1.25em;
+}
+.padding-1{
+  padding: 0.7em 1em;
+}
 .em-color-title {
   border-top:1px solid;
   font-size: 0.9375em;
   font-weight: 800;
-  line-height: 1;
+  color: $green;
+}
+.light-color-title {
+  border-bottom: 1px solid;
+  font-size: 0.9375em;
   color: $green;
 }
 .text-right {
