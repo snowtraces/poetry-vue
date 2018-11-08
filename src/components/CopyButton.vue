@@ -9,15 +9,14 @@ export default {
   name: 'CopyButton',
   methods: {
     copyContent: function (e) {
+      debugger
       let current = e.target
       let content = current.parentElement.outerText
-      content = content.substring(0, content.length - 4).replace(/\n\n/g, '\n')
+      content = content.substring(0, content.length - 3).replace(/\n\n/g, '\n')
 
       let target = document.createElement('textarea')
       target.style.position = 'absolute'
       target.style.opacity = '0'
-      target.style.width = '0'
-      target.style.height = '0'
       target.style.left = '0'
       target.style.top = '0'
       target.style.zIndex = '-9999'
