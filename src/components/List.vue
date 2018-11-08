@@ -1,5 +1,8 @@
 <template>
   <div id="wrap">
+    <transition name="fade">
+      <Loading v-if="isLoading"></Loading>
+    </transition>
     <Header :inputKeyword="keyword"></Header>
     <section id="content">
       <ContentMiddleList :beanList="beanList" :keyword="keyword" :page="page" :tagList="tagList" :total="total"></ContentMiddleList>
@@ -15,9 +18,10 @@ import Header from './Header'
 import ContentMiddleList from './ContentMiddleList'
 import ContentRightList from './ContentRightList'
 import Footer from './Footer'
+import Loading from './base/Loading'
 export default {
   name: 'Layouts',
-  components: {Footer, ContentMiddleList, ContentRightList, Header},
+  components: {Loading, Footer, ContentMiddleList, ContentRightList, Header},
   data () {
     return {
       keyword: '',
@@ -26,21 +30,24 @@ export default {
       tagList: [],
       beanList: [],
       author: {},
-      errors: []
+      errors: [],
+      isLoading: true
     }
   },
-  beforeRouteEnter (to, from, next) {
-    let keyword = to.params.keyword
-    let page = to.params.page
+  created () {
+    this.isLoading = true
+    let keyword = this.$route.params.keyword
+    let page = this.$route.params.page
     axios.get(`https://shicigefu.net/api/poetry/search?keyword=${keyword}&page=${page}`)
       .then(response => {
-        next(vm => vm.setData(response.data))
+        this.setData(response.data)
       })
       .catch(e => {
         this.errors.push(e)
       })
   },
   beforeRouteUpdate (to, from, next) {
+    this.isLoading = true
     let keyword = to.params.keyword
     let page = to.params.page
     axios.get(`https://shicigefu.net/api/poetry/search?keyword=${keyword}&page=${page}`)
@@ -54,13 +61,13 @@ export default {
   },
   methods: {
     setData (data) {
+      this.isLoading = false
       this.beanList = data.poetryBeanList
       this.keyword = data.keyword
       this.page = data.page
       this.tagList = data.relationTag
       this.total = data.total
       this.author = data.author
-      console.log(this.tagList)
       this.initHead({
         title: `与[${this.keyword.substring(this.keyword.lastIndexOf(':') + 1)}]有关的诗词`,
         keywords: `${this.tagList ? Object.keys(this.tagList).join(', ') : ''}`,

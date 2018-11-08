@@ -1,5 +1,8 @@
 <template>
   <div id="wrap">
+    <transition name="fade">
+      <Loading v-if="isLoading"></Loading>
+    </transition>
     <Header></Header>
     <section id="content">
       <ContentMiddleSingle :poetry="poetry" :author="author" :shangXi="shangXi"></ContentMiddleSingle>
@@ -15,28 +18,32 @@ import Header from './Header'
 import ContentMiddleSingle from './ContentMiddleSingle'
 import ContentRightSingle from './ContentRightSingle'
 import Footer from './Footer'
+import Loading from './base/Loading'
 export default {
   name: 'Single',
-  components: {Footer, ContentMiddleSingle, Header, ContentRightSingle},
+  components: {Loading, Footer, ContentMiddleSingle, Header, ContentRightSingle},
   data () {
     return {
       poetry: {},
       author: {},
       shangXi: {},
-      errors: []
+      errors: [],
+      isLoading: true
     }
   },
-  beforeRouteEnter (to, from, next) {
-    let id = to.params.id
+  created () {
+    this.isLoading = true
+    let id = this.$route.params.id
     axios.get(`https://shicigefu.net/api/poetry/${id}?language=1`)
       .then(response => {
-        next(vm => vm.setData(response.data))
+        this.setData(response.data)
       })
       .catch(e => {
         this.errors.push(e)
       })
   },
   beforeRouteUpdate (to, from, next) {
+    this.isLoading = true
     let id = to.params.id
     axios.get(`https://shicigefu.net/api/poetry/${id}?language=1`)
       .then(response => {
@@ -49,7 +56,7 @@ export default {
   },
   methods: {
     setData (data) {
-      console.log(data)
+      this.isLoading = false
       this.poetry = data.poetry
       this.author = data.author
       this.shangXi = data.shangXi

@@ -2,6 +2,7 @@
 $color: #3367d6;
 $bg-color: #1a73e8;
 $visited-color: #7b1fa2;
+$hover-color: darken($color, 15%);
 body,html {
   height: 100%;
   min-width: 360px;
@@ -42,6 +43,9 @@ body, input, textarea, button {
 a {
   color: $color;
 }
+a:hover {
+  color: $hover-color;
+}
 a:visited {
   color: $visited-color;
 }
@@ -55,6 +59,23 @@ a:visited {
   stroke: $color;
   stroke-width: 4px;
 }
+#logo-1 path{
+  fill: $color;
+  stroke: $color;
+}
+#logo-2 path{
+  fill: $color;
+  stroke: $color;
+}
+#logo-3 path{
+  fill: $color;
+  stroke: $color;
+}
+#logo-4 path{
+  fill: $color;
+  stroke: $color;
+}
+
 
 .has-shadow {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);

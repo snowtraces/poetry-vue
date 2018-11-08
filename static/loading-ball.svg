@@ -1,0 +1,17 @@
+<svg class="lds-balls" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="55.5178" cy="74.4822" r="5" fill="#0055a5">
+  <animate attributeName="cx" values="80;50" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animate>
+  <animate attributeName="cy" values="50;80" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animate>
+  <animate attributeName="fill" values="#0055a5;#45aee7" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animate>
+</circle><circle cx="25.5178" cy="55.5178" r="5" fill="#45aee7">
+  <animate attributeName="cx" values="50;20" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animate>
+  <animate attributeName="cy" values="80;50.00000000000001" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animate>
+  <animate attributeName="fill" values="#45aee7;#bda0b2" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animate>
+</circle><circle cx="44.4822" cy="25.5178" r="5" fill="#bda0b2">
+  <animate attributeName="cx" values="20;49.99999999999999" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animate>
+  <animate attributeName="cy" values="50.00000000000001;20" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animate>
+  <animate attributeName="fill" values="#bda0b2;#ce64a6" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animate>
+</circle><circle cx="74.4822" cy="44.4822" r="5" fill="#ce64a6">
+  <animate attributeName="cx" values="49.99999999999999;80" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animate>
+  <animate attributeName="cy" values="20;49.99999999999999" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animate>
+  <animate attributeName="fill" values="#ce64a6;#0055a5" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animate>
+</circle></svg>
