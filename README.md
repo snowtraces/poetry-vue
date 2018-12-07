@@ -1,4 +1,4 @@
-# learn-01
+# poetry-vue
 
 > A Vue.js project
 
