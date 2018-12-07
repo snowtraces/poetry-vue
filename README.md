@@ -1,6 +1,6 @@
 # poetry-vue
 
-> A Vue.js project
+[poetry-web](https://github.com/snowtraces/poetry-web "诗词歌赋") 项目的页面重构
 
 ## Build Setup
 
